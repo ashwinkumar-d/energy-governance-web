@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Hotel } from './model/hotel';
+import { Hotel } from '../model/hotel';
+import { EnergyConsumption } from '../model/energy-consumption';
 
 @Injectable()
 export class EnergyGovernanceService {
@@ -16,4 +17,7 @@ export class EnergyGovernanceService {
     return this.http.get<Hotel[]>(this.url);
   }
 
+  public findConsumptionByHotel(energyType: string): Observable<EnergyConsumption[]> {
+    return this.http.get<EnergyConsumption[]>(this.url + "/1/"+energyType);
+  }
 }

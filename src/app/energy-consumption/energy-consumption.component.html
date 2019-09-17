@@ -1,0 +1,32 @@
+<div class="container">
+    <h3>Hotel Energy Consumption</h3>
+    <select formControlName="hotelSelector">
+            <option [value]="hotel" *ngFor="let hotel of hotels">
+    </select>
+    <ul class="nav nav-tabs">
+        <li class="nav-item active"><button (click)="getConsumptionDetails('water')">Water Consumption</button></li>
+        <li class="nav-item"><button (click)="getConsumptionDetails('electricity')">Electricity Consumption</button></li>
+        <li class="nav-item"><button (click)="getConsumptionDetails('waste')">Waste Generation</button></li>
+    </ul>
+    <div class="card my-5" *ngIf="energyConsumptionDetails">
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let energy of energyConsumptionDetails">
+                    <td>{{ energy.id }}</td>
+                    <td>{{ energy.quantity }}</td>
+                    <td>{{ energy.updated }}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <div><a href='/'>Back</a></div>
+  </div>

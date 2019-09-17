@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../model/hotel';
-import { EnergyGovernanceService } from '../energy-governance'
+import { EnergyGovernanceService } from '../service/energy-governance'
 
 @Component({
   selector: 'app-hotel-list',
