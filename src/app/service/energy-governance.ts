@@ -17,7 +17,7 @@ export class EnergyGovernanceService {
     return this.http.get<Hotel[]>(this.url);
   }
 
-  public findConsumptionByHotel(energyType: string): Observable<EnergyConsumption[]> {
-    return this.http.get<EnergyConsumption[]>(this.url + "/1/"+energyType);
+  public findConsumptionByHotel(hotelId:string, energyType: string): Observable<EnergyConsumption[]> {
+    return this.http.get<EnergyConsumption[]>(this.url+"/"+hotelId+"/"+energyType);
   }
 }

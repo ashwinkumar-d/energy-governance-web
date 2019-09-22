@@ -1,13 +1,27 @@
 <div class="container">
     <h3>Hotel Energy Consumption</h3>
-    <select formControlName="hotelSelector">
-            <option [value]="hotel" *ngFor="let hotel of hotels">
-    </select>
-    <ul class="nav nav-tabs">
-        <li class="nav-item active"><button (click)="getConsumptionDetails('water')">Water Consumption</button></li>
-        <li class="nav-item"><button (click)="getConsumptionDetails('electricity')">Electricity Consumption</button></li>
-        <li class="nav-item"><button (click)="getConsumptionDetails('waste')">Waste Generation</button></li>
-    </ul>
+    <h5>Get Energy Consumption Details by Hotel</h5>
+        <form name = "energyDetailsForm" [formGroup]="energyConsumptionDetailsForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+            <div class="col">
+                <label for="hotelName">Hotel Name</label>
+                <select id="hotelName" class="form-control" [(ngModel)]="selectedHotel">
+                    <option value="" disabled>Choose your hotel</option>
+                    <option *ngFor="let hotel of hotels" [ngValue] = "hotel.hotelName">{{ hotel.hotelName }}</option>>
+                </select>
+            </div>
+            <div class="col">
+                <label for="energy">Energy Type</label>
+                <select id = "energy" class="form-control" [(ngModel)]="selectedEnergy">
+                    <option value="" disabled>Choose your energy type</option>
+                    <option *ngFor="let energy of energyTypes" [ngValue] = "energy">{{ energy }}</option>
+                </select>
+            </div>
+            <div class="col">
+                <button type="submit" >Get Energy Consumptions</button>
+            </div>
+            </div>
+        </form>
     <div class="card my-5" *ngIf="energyConsumptionDetails">
         <div class="card-body">
             <table class="table table-bordered table-striped">

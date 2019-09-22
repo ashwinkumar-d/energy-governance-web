@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HomeComponent } from './home/home.component';
 import { EnergyConsumptionComponent } from './energy-consumption/energy-consumption.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { EnergyConsumptionComponent } from './energy-consumption/energy-consumpt
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [EnergyGovernanceService],

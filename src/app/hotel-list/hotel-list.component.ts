@@ -11,7 +11,8 @@ export class HotelListComponent implements OnInit {
 
   hotels: Hotel[];
 
-  constructor(private energyGovernanceService: EnergyGovernanceService) { }
+  constructor(private energyGovernanceService: EnergyGovernanceService) { 
+  }
 
   ngOnInit() {
     this.energyGovernanceService.findAll().subscribe(data => {
