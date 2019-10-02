@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HomeComponent } from './home/home.component';
 import { EnergyConsumptionComponent } from './energy-consumption/energy-consumption.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HotelDetailsComponent } from './hotel-details-form/hotel-details-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,13 +16,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HotelListComponent,
     HomeComponent,
-    EnergyConsumptionComponent
+    EnergyConsumptionComponent,
+    HotelDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [EnergyGovernanceService],
