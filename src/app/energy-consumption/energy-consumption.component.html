@@ -4,13 +4,13 @@
     <div class="row">
         <div class="col">
             <label for="hotelName">Hotel Name</label>
-            <select id="hotelName" class="form-control" [(ngModel)]="selectedHotelName" required>
+            <select id="hotelName" class="form-control" [(ngModel)]="selectedHotel" required>
                 <option *ngFor="let hotel of hotels" [ngValue] = "hotel">{{ hotel.hotelName }}</option>
             </select>
         </div>
         <div class="col">
             <label for="energy">Energy Type</label>
-            <select id = "energy" class="form-control" name = "energyType" [(ngModel)]="selectedEnergyType" required>
+            <select id = "energy" class="form-control" [(ngModel)]="selectedEnergyType" required>
                 <option *ngFor="let energy of energyTypes" [ngValue] = "energy">{{ energy }}</option>
             </select>
         </div>

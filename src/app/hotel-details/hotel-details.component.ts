@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../model/hotel';
-import { NgForm, NgModel } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { EnergyGovernanceService } from '../service/energy-governance';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-hotel-details-form',
-  templateUrl: './hotel-details-form.component.html',
-  styleUrls: ['./hotel-details-form.component.css']
+  selector: 'app-hotel-details',
+  templateUrl: './hotel-details.component.html',
+  styleUrls: ['./hotel-details.component.css']
 })
 export class HotelDetailsComponent implements OnInit {
 

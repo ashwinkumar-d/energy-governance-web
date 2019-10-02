@@ -1,6 +1,7 @@
+<div class="container">
 <div class="card my-5">
     <div class="card-body">
-      <table class="table table-bordered table-striped">
+      <table *ngIf="showEntries" class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
@@ -18,8 +19,9 @@
           </tr>
         </tbody>
       </table>
+      <div class="row" *ngIf="!showEntries">No Entries to show</div>
     </div>
-    <div class="row"></div>
     <div><a href='/' class="btn btn-info">Back</a></div>
     <div><a href='/addHotel' class="btn btn-info">Add Hotel</a></div>
+  </div>
   </div>

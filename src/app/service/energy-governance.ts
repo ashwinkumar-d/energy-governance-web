@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpResponse } from '@angular/common/http';
 import { Hotel } from '../model/hotel';
-import { EnergyConsumption } from '../model/energy-consumption';
+import { EnergyTypeDetails } from '../model/energy-type-details';
 
 @Injectable()
 export class EnergyGovernanceService {
@@ -17,11 +17,15 @@ export class EnergyGovernanceService {
     return this.http.get<Hotel[]>(this.url);
   }
 
-  public findConsumptionByHotel(hotelId:string, energyType: string): Observable<EnergyConsumption[]> {
-    return this.http.get<EnergyConsumption[]>(this.url+"/"+hotelId+"/"+energyType);
+  public findConsumptionByHotel(hotelId:string, energyType: string): Observable<EnergyTypeDetails[]> {
+    return this.http.get<EnergyTypeDetails[]>(this.url+"/"+hotelId+"/"+energyType);
   }
 
   public addAddress(hotel: Hotel) : Observable<Hotel> {
     return this.http.post<Hotel>(this.url+"/",hotel);
+  }
+
+  public addEnergyDetails(hotelId: string, energyType: string, energyTypeObject: EnergyTypeDetails) : Observable<string> {
+    return this.http.post<string>(this.url+"/"+hotelId+"/"+energyType,energyTypeObject);
   }
 }

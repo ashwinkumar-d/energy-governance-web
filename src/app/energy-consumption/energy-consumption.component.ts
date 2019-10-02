@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EnergyGovernanceService } from '../service/energy-governance';
-import { EnergyConsumption } from '../model/energy-consumption';
+import { EnergyTypeDetails } from '../model/energy-type-details';
 import { Hotel } from '../model/hotel';
 
 @Component({
@@ -10,10 +10,10 @@ import { Hotel } from '../model/hotel';
 })
 export class EnergyConsumptionComponent implements OnInit {
 
-  energyConsumptionDetails: EnergyConsumption[];
+  energyTypeDetails: EnergyTypeDetails[];
   hotels: Hotel[];
   energyTypes: any[];
-  selectedHotelName: any = {};
+  selectedHotel: any = {};
   selectedEnergyType: string = '';
   postErrorMessage: string='Please choose any option';
   postError:boolean =  false;
@@ -31,10 +31,10 @@ export class EnergyConsumptionComponent implements OnInit {
   }
 
   addProduct() {
-    if(Object.keys(this.selectedHotelName).length != 0 && this.selectedEnergyType.length != 0) {
-      this.energyGovernanceService.findConsumptionByHotel(this.selectedHotelName.id, this.selectedEnergyType.toLowerCase()).subscribe(data => {
+    if(Object.keys(this.selectedHotel).length != 0 && this.selectedEnergyType.length != 0) {
+      this.energyGovernanceService.findConsumptionByHotel(this.selectedHotel.id, this.selectedEnergyType.toLowerCase()).subscribe(data => {
         if(data.length>0){
-          this.energyConsumptionDetails = data;
+          this.energyTypeDetails = data;
           this.showNoEntries = false;
         }else {
           this.showNoEntries = true;

@@ -10,13 +10,20 @@ import { EnergyGovernanceService } from '../service/energy-governance'
 export class HotelListComponent implements OnInit {
 
   hotels: Hotel[];
+  showEntries: boolean = false;
 
   constructor(private energyGovernanceService: EnergyGovernanceService) { 
   }
 
   ngOnInit() {
     this.energyGovernanceService.findAll().subscribe(data => {
-      this.hotels = data;
+      if(data.length !=0){
+        this.hotels = data;
+        this.showEntries = true;
+      }else{
+        this.showEntries = false;
+      }
+
     });
   }
 }

@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HomeComponent } from './home/home.component';
 import { EnergyConsumptionComponent } from './energy-consumption/energy-consumption.component';
-import { HotelDetailsComponent } from './hotel-details-form/hotel-details-form.component';
+import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EnergyDetailsComponent } from './energy-details/energy-details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HotelListComponent,
     HomeComponent,
     EnergyConsumptionComponent,
-    HotelDetailsComponent
+    HotelDetailsComponent,
+    EnergyDetailsComponent
   ],
   imports: [
     BrowserModule,
